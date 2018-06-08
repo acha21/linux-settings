@@ -82,6 +82,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# User configuration
+export LOCAL=$HOME/.local
+export PATH=$LOCAL/bin:$PATH
+export LC_CTYPE=en_US.UTF-8
 
 eval `dircolors $HOME/.dircolors/dircolors.256dark`
 
@@ -97,6 +101,8 @@ bindkey "^[[4~" end-of-line
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias tn='tmux new-session -s'
+alias ta='tmux attatch -t'
 
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
