@@ -82,29 +82,36 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# User configuration
-export LOCAL=$HOME/.local
-export PATH=$LOCAL/bin:$PATH
-export LC_CTYPE=en_US.UTF-8
-
-eval `dircolors $HOME/.dircolors/dircolors.256dark`
-
 if [[ $TERM == xterm ]]; then
     export TERM=xterm-256color;
 fi
+eval `dircolors $HOME/.dircolors/dircolors.256dark`
+
+
+## User configuration
+export LC_CTYPE=en_US.UTF-8
+export LOCAL=$HOME/.local
+
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+
+export PATH=$LOCAL/bin:$PATH
+export PATH="/usr/local/cuda/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 # key bindings
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 # Aliases
+function __download() {
+    wget -P "$HOME/downloads" $1
+}
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias tn='tmux new-session -s'
-alias ta='tmux attatch -t'
+alias tn="tmux new-session -s "
+alias ta="tmux attach -t "
+alias download="__download"
 
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-
-export PATH="$HOME/anaconda3/bin:$PATH"
+. /home/acha21/anaconda3/etc/profile.d/conda.sh
