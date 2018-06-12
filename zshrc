@@ -92,9 +92,9 @@ eval `dircolors $HOME/.dircolors/dircolors.256dark`
 export LC_CTYPE=en_US.UTF-8
 export LOCAL=$HOME/.local
 
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
 
-export PATH=$LOCAL/bin:$PATH
+export PATH="$LOCAL/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 
