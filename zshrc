@@ -115,4 +115,7 @@ alias tn="tmux new-session -s "
 alias ta="tmux attach -t "
 alias download="__download"
 
+# Setopts
+setopt extendedglob
+
 . /home/acha21/anaconda3/etc/profile.d/conda.sh
