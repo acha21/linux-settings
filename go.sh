@@ -2,6 +2,8 @@ sudo sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
 
 sudo apt-get install zsh
 
+apt-get install git-core
+
 for cmd in git vim zsh tmux
 do
     if ! type $cmd > /dev/null; then
