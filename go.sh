@@ -1,3 +1,5 @@
+sudo sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
+
 for cmd in git vim zsh tmux
 do
     if ! type $cmd > /dev/null; then
