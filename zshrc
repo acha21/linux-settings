@@ -82,6 +82,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+function __sdiff() {
+    vimdiff $1/summary.yaml $2/summary.yaml
+}
+
+function __activate() {
+        source $HOME/.p$1/bin/activate
+}
+
 if [[ $TERM == xterm ]]; then
     export TERM=xterm-256color;
 fi
@@ -92,7 +101,7 @@ eval `dircolors $HOME/.dircolors/dircolors.256dark`
 export LC_CTYPE=en_US.UTF-8
 export LOCAL=$HOME/.local
 
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 
 export PATH="$LOCAL/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
@@ -108,11 +117,37 @@ function __download() {
     wget -P "$HOME/downloads" $1
 }
 
+function __source_activate() {
+    source activate $1
+    echo "Current python: $(which python)"
+}
+
+function __source_deactivate() {
+    source deactivate
+    echo "Current python: $(which python)"
+}
+
+function __which_python() {
+    which python
+}
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias tn="tmux new-session -s "
 alias ta="tmux attach -t "
 alias download="__download"
-
+alias activate="__activate"
+alias sa="__source_activate"
+alias sd="__source_deactivate"
+alias wp="__which_python"
+alias sdiff="__sdiff"
+# setopts
+setopt extendedglob
 . /home/acha21/anaconda3/etc/profile.d/conda.sh
+
+PATH="/home/acha21/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/acha21/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/acha21/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/acha21/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/acha21/perl5"; export PERL_MM_OPT;
