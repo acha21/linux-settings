@@ -142,8 +142,10 @@ alias sa="__source_activate"
 alias sd="__source_deactivate"
 alias wp="__which_python"
 alias sdiff="__sdiff"
-# setopts
+
+# Setopts
 setopt extendedglob
+
 . /home/acha21/anaconda3/etc/profile.d/conda.sh
 
 PATH="/home/acha21/perl5/bin${PATH:+:${PATH}}"; export PATH;
