@@ -1,8 +1,17 @@
 sudo sed -i 's/kr.archive.ubuntu.com/ftp.daumkakao.com/g' /etc/apt/sources.list
 
-sudo apt-get install zsh
+sudo apt-get clean && sudo apt-get update && sudo apt-get install -y locales
 
-apt-get install git-core
+export LANGUAGE=en_US.UTF-8
+sudo locale-gen en_US.UTF-8
+
+sudo pip install --upgrade pip
+sudo pip install gpustat
+sudo apt install tmux
+sudo apt-get install zsh
+chsh -s /usr/bin/zsh
+
+sudo apt-get install git-core
 
 for cmd in git vim zsh tmux
 do
@@ -13,11 +22,11 @@ do
 done
 
 # Install Vundle
-git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+sudo git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
 # Install oh-my-zsh
 install_oh_my_zsh () {
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sed "s/env zsh//g")"
+    sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sed "s/env zsh//g")"
 }
 install_oh_my_zsh
 

@@ -87,9 +87,6 @@ function __sdiff() {
     vimdiff $1/summary.yaml $2/summary.yaml
 }
 
-function __activate() {
-        source $HOME/.p$1/bin/activate
-}
 
 if [[ $TERM == xterm ]]; then
     export TERM=xterm-256color;
@@ -101,12 +98,7 @@ eval `dircolors $HOME/.dircolors/dircolors.256dark`
 export LC_CTYPE=en_US.UTF-8
 export LOCAL=$HOME/.local
 
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
-
 export PATH="$LOCAL/bin:$PATH"
-export PATH="/usr/local/cuda/bin:$PATH"
-export PATH="$HOME/.miniconda3/bin:$PATH"
-export PATH="$HOME/acha21/.gem/ruby/2.3.0/bin:$PATH"
 # key bindings
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
@@ -145,9 +137,3 @@ alias sdiff="__sdiff"
 # Setopts
 setopt extendedglob
 
-PATH="/home/acha21/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/acha21/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/acha21/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/acha21/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/acha21/perl5"; export PERL_MM_OPT;
-PAI_HOME="/home/acha21/codes/ParlAI"; export PAI_HOME;
