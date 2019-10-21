@@ -99,6 +99,7 @@ export LC_CTYPE=en_US.UTF-8
 export LOCAL=$HOME/.local
 
 export PATH="$LOCAL/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/nvidia/lib64:/usr/local/cuda-9.2/targets/x86_64-linux/lib:/usr/lib/x86_64-linux-gnu:/usr/local/nccl/lib:/usr/local/opencv/lib:/opt/openblas/lib:/usr/lib"
 # key bindings
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
