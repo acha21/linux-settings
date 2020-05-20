@@ -116,13 +116,13 @@ function __download() {
     wget -P "$HOME/downloads" $1
 }
 
-function __source_activate() {
-    source activate $1
+function __conda_activate() {
+    conda activate $1
     echo "Current python: $(which python)"
 }
 
-function __source_deactivate() {
-    source deactivate
+function __conda_deactivate() {
+    conda deactivate
     echo "Current python: $(which python)"
 }
 
@@ -137,8 +137,8 @@ alias tn="tmux new-session -s "
 alias ta="tmux attach -t "
 alias download="__download"
 alias activate="__activate"
-alias sa="__source_activate"
-alias sd="__source_deactivate"
+alias sa="__conda_activate"
+alias sd="__conda_deactivate"
 alias wp="__which_python"
 alias sdiff="__sdiff"
 
