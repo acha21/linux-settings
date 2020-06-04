@@ -105,7 +105,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/e
 
 export PATH="$LOCAL/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
-export PATH="$HOME/.miniconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/acha21/.gem/ruby/2.3.0/bin:$PATH"
 # key bindings
 bindkey "^[[1~" beginning-of-line
