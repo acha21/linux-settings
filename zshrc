@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -87,13 +87,11 @@ function __sdiff() {
     vimdiff $1/summary.yaml $2/summary.yaml
 }
 
-function __activate() {
-        source $HOME/.p$1/bin/activate
-}
 
 if [[ $TERM == xterm ]]; then
     export TERM=xterm-256color;
 fi
+
 eval `dircolors $HOME/.dircolors/dircolors.256dark`
 
 
@@ -105,7 +103,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/e
 
 export PATH="$LOCAL/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
-export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
 export PATH="$HOME/acha21/.gem/ruby/2.3.0/bin:$PATH"
 # key bindings
 bindkey "^[[1~" beginning-of-line
@@ -116,8 +114,8 @@ function __download() {
     wget -P "$HOME/downloads" $1
 }
 
-function __conda_activate() {
-    conda activate $1
+function __condaactivate() {
+    conda activate "$1"
     echo "Current python: $(which python)"
 }
 
@@ -127,8 +125,13 @@ function __conda_deactivate() {
 }
 
 function __which_python() {
+    echo "$1"
     which python
 }
+
+
+# Setopts
+setopt extendedglob
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -136,12 +139,11 @@ alias rm='rm -i'
 alias tn="tmux new-session -s "
 alias ta="tmux attach -t "
 alias download="__download"
-alias activate="__activate"
-alias sa="__conda_activate"
+alias sa="__condaactivate"
 alias sd="__conda_deactivate"
 alias wp="__which_python"
 alias sdiff="__sdiff"
 
-# Setopts
-setopt extendedglob
+source ~/anaconda3/etc/profile.d/conda.sh
+
 
