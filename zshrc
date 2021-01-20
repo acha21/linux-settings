@@ -111,7 +111,7 @@ bindkey "^[[4~" end-of-line
 
 # Aliases
 function __download() {
-    wget -P "$HOME/downloads" $1
+    wget -P "$HOME/Downloads" $1
 }
 
 function __condaactivate() {
