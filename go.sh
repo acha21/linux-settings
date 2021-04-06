@@ -24,10 +24,15 @@ install_oh_my_zsh
 # Solarized dircolors
 git clone https://github.com/seebi/dircolors-solarized $HOME/.dircolors
 
+# Install oh-my-tmux configuaration
+cd
+git clone https://github.com/acha21/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+
 # Copy configuration files
 cp -f ./zshrc $HOME/.zshrc
 cp -f ./vimrc $HOME/.vimrc
-cp -f ./tmux.conf $HOME/.tmux.conf
 
 # Install Vundle plugins
 vim +PluginInstall +qall
