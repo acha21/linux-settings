@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Icon[en_US]=bash
+Terminal=false
+Name[en_US]=light
+Exec=bash /home/acha21/linux-settings/etc/redshift5500.sh
+Comment[en_US]=redshift_cool
+Name=cool
+Comment=cool screen
+Icon=/home/acha21/linux-settings/etc/cool.png
+

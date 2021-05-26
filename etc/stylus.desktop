@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Icon[en_US]=bash
+Terminal=false
+Name[en_US]=stylus.desktop
+Exec=bash /home/acha21/linux-settings/etc/set_stylus.sh
+Comment[en_US]=set_stylus
+Name=set_stylus
+Comment=set_stylus
+Icon=/home/acha21/linux-settings/etc/pen.png
+

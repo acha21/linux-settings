@@ -21,6 +21,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,12 +44,15 @@ filetype plugin indent on    " required
 "
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
+let python_highlight_all=1
 
+set clipboard=unnamed
 set laststatus=2
 
 set t_Co=256
 set bs=2
 syntax on
+
 filetype indent on
 set autoindent
 set number
@@ -56,6 +64,8 @@ set ignorecase
 set smartcase
 set list
 
+set encoding=utf-8
+
 inoremap jj <Esc>
 
 map <C-n> :NERDTreeToggle<CR>
@@ -63,3 +73,18 @@ map <C-n> :NERDTreeToggle<CR>
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+

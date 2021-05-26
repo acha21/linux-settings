@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Icon[en_US]=bash
+Terminal=false
+Name[en_US]=cozy
+Exec=bash /home/acha21/linux-settings/etc/redshift.sh
+Comment[en_US]=redshift4800
+Name=redshift4800k
+Comment=redshift4800k
+Icon=/home/acha21/linux-settings/etc/red.png
+
