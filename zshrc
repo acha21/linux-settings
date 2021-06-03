@@ -105,6 +105,9 @@ export PATH="$LOCAL/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
 export PATH="$HOME/acha21/.gem/ruby/2.3.0/bin:$PATH"
+export USER_ID=$(id -u)
+export GROUP_ID=$(id -g)
+
 # key bindings
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
