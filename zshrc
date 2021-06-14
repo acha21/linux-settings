@@ -147,6 +147,3 @@ alias sd="__conda_deactivate"
 alias wp="__which_python"
 alias sdiff="__sdiff"
 
-source ~/anaconda3/etc/profile.d/conda.sh
-
-
