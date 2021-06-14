@@ -38,13 +38,6 @@ cp -f ./vimrc $HOME/.vimrc
 vim +PluginInstall +qall
 
 # Setup git
-echo ""
-echo "Let's do some git configurations."
-echo "(You can just hit Ctrl+C if you don't want to, but in that case you have to manually run zsh or restart the terminal.)"
-read -p "Email: " email
-read -p "Name: " name
-git config --global user.email $email
-git config --global user.name $name
 
 # Done!
 echo ""
